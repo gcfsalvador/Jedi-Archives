@@ -1,0 +1,53 @@
+import time, random, sys
+
+#Delayed Text for realism
+#Not yet used too lazy to change every print out currently
+typing_speed = 50 #wpm
+def slow_type(t):
+    for l in t:
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+    print ('')
+
+#Story
+def IntroMonsters():
+    print("Well as you see these infected are more similar to zombies from fictional media in the old world")
+    print("Buuuuut with a slight exception. They are more so mutated husks that can still speak and hear")
+    print("Although you will hear them in pain, so when you see one. Shoot them or cut them. Let them rest from the pain")
+    print("Do you understand? (Y/N)")
+    choice2 = input(">: ")
+    if choice2 == "Y":
+        print("Very good. You want to continue? (Y/N)")
+        choice3 = input(">: ")
+        if choice3 == "Y":
+            print("")
+    elif choice2 == "N":
+        print("Alright let me repeat myself.")
+        IntroMonsters()
+    else:
+        slow_type("Eh? Can you repeat that?")
+
+def Introduction():
+    print("""In the year 2077, after the end of the apocolypse. The Infection named Fungirus, has ceased to exist. What is left of humanity
+          is but an abandoned civilization with few left remaining to fix up what has happened for the past 39 years the
+          Fungirus existed.""")
+    input(print("> "))
+    print("All the remaining 600 million humans remain, receiving the vaccine and being immune to the infection.")
+    print("From then they are tasked to explore the post-world and eliminate the remaining infected from the Fungirus.")
+    print("Save others, as how others saved you.")
+
+def Character():
+    name = print("What is your name?")
+    print(f"I see. {name}, You are a new recruit right? (Y/N)")
+    choice1 = input(">: ")
+    if choice1 == "Y":
+        print("I see. Very well. You should know that this is but a scary task for you.")
+        IntroMonsters()
+
+    elif choice1 == "N":
+        print("Oh? So you are experienced is this matter correct?")
+
+#Choice-based
+#Mainmenu
+#Endings
